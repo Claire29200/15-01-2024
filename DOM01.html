@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bordRougePointille {
+            border:thin dotted red
+               
+        }
+
+        #affiche{
+            font-size:30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>titre</h1>
+    <p id="debut"></p>
+    <p id="p1" class="cours"> paragraphe 1</p>
+    <p id="p2" class="cours"> paragraphe 2</p>
+    <p id="p3" class="cours"> paragraphe 3</p>
+    <p id="p4" class="cours"> paragraphe 4</p>
+    <form action="..." method="POST">
+        <input type="text" name="unnom"/>
+    </form>
+    <br/>
+    
+    <button id="b1">GO</button>
+
+    <br>
+
+    <button id="b2">REMOVE</button>
+
+    <div id="affiche">
+        
+    </div>
+
+
+    <script>
+        // SELECTION  
+
+        // acces à la référence de l'élément, et dont l'id est début 
+      document.getElementById("debut").innerHTML = "<strong>change le texte<strong>";
+      document.querySelector("#debut").innerHTML= "<strong>change le texte en strong</strong>"  ;
+      document.getElementsByClassName("cours")[1].innerHTML= "modif 2 eme elt de la classe cours";
+      document.getElementsByTagName('h1')[0].innerHTML ="TOTO"
+      console.log( (document.getElementsByName("unnom"))[0])
+      console.log(document.querySelectorAll(".cours")[0]) 
+    //   document.getElementById("debut").style.border = "thin dotted red"; 
+    //   document.getElementById("debut").classList.add('bordRougePointille') 
+
+    //   EVENTS  et SELECTION ET MODIFICATION
+    document.getElementById("b1").addEventListener("click",function(e) {
+        document.getElementById("debut").classList.add('bordRougePointille')
+    })
+
+    document.getElementById("b2").addEventListener("click",function(e) {
+        document.getElementById("debut").classList.remove('bordRougePointille')
+    })
+
+    // document.getElementsByName("unnom")[0].addEventListener("keyup",function(e){
+    //     console.log(e)
+    // })
+    
+    // document.getElementsByName("unnom")[0].addEventListener("keyup",function(e){
+    //     document.getElementById("affiche").append(e.key)
+    // })
+    
+    document.getElementsByName("unnom")[0].addEventListener("blur",function(e){
+        document.getElementById("affiche").append(this.value)
+    })
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+
+    </style>
+</head>
+<body>
+    <button>ajoute un paragraphe</button>
+    <div id="container"></div>
+
+
+
+
+
+    <script>
+        document
+        .getElementsByName("button")[0]
+        .addEventListener("click",function () {
+       let p1 = document.createElement("p");
+    //    récuperer la valeur de input 
+       let newText = document.createTextNode("mon texte");
+       p1.appendChild(newText);
+       let container = document.getElementById("container");
+       container.appendChild(p1);
+
+       })
+
+
+
+    </script>
+</body>
+</html>
